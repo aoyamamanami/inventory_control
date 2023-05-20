@@ -5,7 +5,10 @@
         <title>在庫管理システム</title>
     </head>
     <body>
-        <h2>新規登録</h2>
+        <x-app-layout>
+            <x-slot name="header">
+                新規登録
+            </x-slot>
         <form action="/admins" method="POST">
             @csrf
             <div class="category_id">
@@ -29,5 +32,6 @@
         <div class="footer">
             <a href="/">戻る</a>
         </div>
+        </x-app-layout>
     </body>
     </html>
