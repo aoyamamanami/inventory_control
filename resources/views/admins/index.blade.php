@@ -7,8 +7,12 @@
         <link href="https://fonts/googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h2>在庫一覧</h2>
-        <table>
+        <x-app-layout>
+            <x-slot name="header">
+                在庫一覧
+            </x-slot>
+            <h3>ユーザー：{{ Auth::user()->name }}</h3>
+            <table>
                 <div class='products'>
                     <tr>
                         <th>商品ID</th>
@@ -31,10 +35,11 @@
                         </tr>
                     @endforeach
                 </div>
-        </table>
+            </table>
             <a href='/admins/create'>新規登録</a>
             <div class='paginate'>
                 {{ $products->links() }}
             </div>  
+        </x-app-layout>
     </body>
 </html>
