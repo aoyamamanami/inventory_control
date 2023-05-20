@@ -13,10 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('admins', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('category_id')->default(0);
+            $table->string('name')->default('');
+            $table->integer('quantity')->default(0);
+            $table->unsignedBigInteger('user_id')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
+        
     }
 
     /**
@@ -26,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admins');
+        Schema::dropIfExists('products');
     }
 };

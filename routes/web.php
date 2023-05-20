@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controller\AdminController; //外部にあるAdminControllerクラスをインポート。
+use App\Http\Controllers\AdminController; //外部にあるAdminControllerクラスをインポート。
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admins',[AdminController::class,'index']);
+Route::get('/', [AdminController::class,'index'])->name('index');
+Route::get('/admins/create', [AdminController::class,'create']);
+Route::post('/admins', [AdminController::class,'store']);
