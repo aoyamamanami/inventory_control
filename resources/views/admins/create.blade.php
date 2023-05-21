@@ -13,7 +13,11 @@
             @csrf
             <div class="category_id">
                 <p>カテゴリーID
-                <input type="number" name="product[category_id]"/></p>
+                <select name="product[category_id]">
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="name">
                 <p>商品名

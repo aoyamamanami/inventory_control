@@ -16,7 +16,7 @@
                 <div class='products'>
                     <tr>
                         <th>商品ID</th>
-                        <th>カテゴリーID</th>
+                        <th>カテゴリー</th>
                         <th>商品名</th>
                         <th>在庫数</th>
                         <th>登録日</th>
@@ -26,7 +26,8 @@
                         <tr>
                             <div class='product'>
                                 <td class="id">{{ $product->id }}</td>
-                                <td class="category_id">{{ $product->category_id }}</td>
+                                <td class="category_id">
+                                    <a href="">{{ $product->category->name }}</a></td>
                                 <td class="name">{{ $product->name }}</td>
                                 <td class="quantity">{{ $product->quantity }}</td>
                                 <td class="created_at">{{ $product->created_at }}</td>

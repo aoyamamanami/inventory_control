@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Http\Requests\AdminRequest;
+use App\Models\Category;
+use Illuminate\Http\Request;
+
 //use宣言は外部にあるクラスをPostController内にインポートできる。
 //この場合、App\Models内のAdminクラスをインポートしている。
 
@@ -17,9 +19,9 @@ class AdminController extends Controller
         //admins/indexはviewsフォルダの中のadminsフォルダの中にあるindex.blade.phpを指す。
     }
     
-    public function create()
+    public function create(Category $category)
     {
-        return view('admins/create');
+        return view('admins/create')->with(['categories' => $category->get()]);
     }
     
     public function store(Admin $product, AdminRequest $request)
