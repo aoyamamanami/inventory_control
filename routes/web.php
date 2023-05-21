@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,8 @@ Route::controller(AdminController::class)->middleware(['auth'])->group(function(
     Route::post('/admins', 'store')->name('store');
     Route::get('/admins/create', 'create')->name('create');
 });
+
+Route::get('/categories/{category}', [CategoryContorller::class, 'index']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
