@@ -9,7 +9,7 @@
             <x-slot name="header">
                 新規登録
             </x-slot>
-        <form action="/admins" method="POST">
+        <form action="/products" method="POST">
             @csrf
             <div class="category_id">
                 <p>カテゴリーID

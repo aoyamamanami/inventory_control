@@ -27,8 +27,9 @@ Route::get('/dashboard', function () {
 
 Route::controller(AdminController::class)->middleware(['auth'])->group(function(){
     Route::get('/', 'index')->name('index');
-    Route::post('/admins', 'store')->name('store');
-    Route::get('/admins/create', 'create')->name('create');
+    Route::post('/products', 'store')->name('store');
+    Route::get('/products/create', 'create')->name('create');
+    Route::get('/products/edit','edit')->name('edit');
 });
 
 Route::get('/categories/{category}', [CategoryContorller::class, 'index']);

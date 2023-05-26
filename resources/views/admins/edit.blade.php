@@ -11,16 +11,22 @@
     <body>
         <x-app-layout>
             <x-slot name="header">
-            <h2>在庫一覧</h2>
+            <h2>在庫一覧編集画面</h2>
             </x-slot>
+            <ul>
+                <li>
                     <h3>ユーザー：{{ Auth::user()->name }}</h3>
+                </li>
+                <li>
                     <div class="form-about">
-                        <form action="{{ route('index') }}" method="GET">
+                        <form action="{{ route('edit') }}" method="GET">
                             @csrf
                             <input type="text" name="keyword" value="{{ $keyword }}" placeholder="すべての商品から探す">
                             <img class="placeholder_img" src="https://sato-icons.com/wp/wp-content/uploads/2020/09/%E6%A4%9C%E7%B4%A2%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3.png" alt="検索アイコン">
                         </form>
                     </div>
+                </li>
+            </ul>
             <table>
                 <div class='products'>
                     <tr>
@@ -46,13 +52,14 @@
                     @endforeach
                 </div>
             </table>
+               <input type="submit" value="登録"/>
+        </form>   
+        <div class="footer">
+            <a href="/">戻る</a>
+        </div>
             <div class='paginate'>
                 {{ $products->links() }}
-            </div>
-            <div class='edit_create'>
-                <a href='/products/edit' class="btn--edit">在庫編集</a>
-                <a href='/products/create' class="btn--create">新規登録</a>
-            </div>
+            </div>  
         </x-app-layout>
     </body>
 </html>
