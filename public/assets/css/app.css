@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+h3{
+    color: #212121;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.form-about form input{
+    width: 260px;
+    height: 100%;
+    display: block;
+    padding: 20px 20px 20px 70px;
+    font-size: 20px;
+    background-color: #ddd;
+    position: absolute;
+    right: 20px;
+}
+
+.form-about form input::placeholder{
+    font-size: 20px;
+    position: relative;
+}
+
+.form-about form{
+    display: block;
+    position: relative;
+    height: 40px;
+    /*background-color: blue;*/
+}
+
+.form-about form .placeholder_img{
+    display: inline;
+    position: absolute;
+    right: 240px;
+    top: 50%;
+    font-size: 25px;
+    transform: translateY(-50%);
+    background-color: #ddd;
+    width: 30px;
+    height: 30px;
+}
+
+table{
+    border-collapse: collapse;
+    margin: 20px 50px 50px;
+}
+
+table th{
+    border-bottom: 2px #212121 solid;
+    padding:10px;
+}
+
+tr:nth-child(odd){
+    background-color: #ddd;
+}
+
+th,td{
+    padding: 5px 10px;
+}
+
+/*.edit_create{*/
+/*    display: inline-block;*/
+/*    position: relative;*/
+/*    left: 200px;*/
+/*    background-color: red;*/
+/*    border-bottom-color: #fff;*/
+/*}*/
+
+.edit_create a .btn--edit{
+    color: #404040;
+    font-weight: bold;
+    background-color: blue;
+    padding: 15px;
+    margin-left: 20px;
+    display: block;
+    position: absolute;
+    left: 1000px;
+    border-bottom-color: red;
+}
+
+.edit_create a .btn--create{
+    color: #404040;
+    font-weight: bold;
+    background-color: green;
+    padding: 15px;
+    margin-left: 20px;
+    display: block;
+    position: absolute;
+    right: 80px;
+}
+
+
