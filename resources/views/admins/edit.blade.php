@@ -9,57 +9,32 @@
 
     </head>
     <body>
-        <x-app-layout>
-            <x-slot name="header">
-            <h2>在庫一覧編集画面</h2>
-            </x-slot>
-            <ul>
-                <li>
-                    <h3>ユーザー：{{ Auth::user()->name }}</h3>
-                </li>
-                <li>
-                    <div class="form-about">
-                        <form action="{{ route('edit') }}" method="GET">
-                            @csrf
-                            <input type="text" name="keyword" value="{{ $keyword }}" placeholder="すべての商品から探す">
-                            <img class="placeholder_img" src="https://sato-icons.com/wp/wp-content/uploads/2020/09/%E6%A4%9C%E7%B4%A2%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3.png" alt="検索アイコン">
-                        </form>
-                    </div>
-                </li>
-            </ul>
-            <table>
-                <div class='products'>
-                    <tr>
-                        <th>商品ID</th>
-                        <th>カテゴリー</th>
-                        <th>商品名</th>
-                        <th>在庫数</th>
-                        <th>登録日</th>
-                        <th>ユーザーID</th>
-                    </tr>
-                    @foreach ($products as $product)
-                        <tr>
-                            <div class='product'>
-                                <td class="id">{{ $product->id }}</td>
-                                <td class="category_id">
-                                    <a href="">{{ $product->category->name }}</a></td>
-                                <td class="name">{{ $product->name }}</td>
-                                <td class="quantity">{{ $product->quantity }}</td>
-                                <td class="created_at">{{ $product->created_at }}</td>
-                                <td class="user_id">{{ $product->user_id }}</td>
-                            </div>
-                        </tr>
-                    @endforeach
-                </div>
-            </table>
-               <input type="submit" value="登録"/>
-        </form>   
-        <div class="footer">
-            <a href="/">戻る</a>
-        </div>
-            <div class='paginate'>
-                {{ $products->links() }}
-            </div>  
-        </x-app-layout>
+            <h2>在庫編集画面</h2>
+                <h3>ユーザー：{{ Auth::user()->name }}</h3>
+                <form action="/products/{{ $product->id }}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <p class="content_product_code">
+                        <label>商品コード</label>
+                        <input type="number" name="product[product_code]" value="{{ $product->product_code }}"/>
+                    </p>
+                    <p class="content_category">
+                        <a href="/categories/{{ $product->category->id }}">{{ $product->category->name }}</a>
+                    </p>
+                    <p class="content_product">{{ $product->name }}</p>
+                    <p class='content_unit_price'>
+                        <label>単価</label>
+                        <input type="number" name="product[unit_price]" value="{{ $product->unit_price }}"/>
+                    </p>
+                    <p class='contetnt_quantity'>
+                        <label>発注数</label>
+                        <input type="number" name="product[quantity]" value="{{ $product->quantity }}"/>
+                    </p>
+                    <p class="content_created_at">{{ $product->created_at->format('Y/m/d') }}</p>
+                    <input type="submit" value="変更">
+                </form>
+        <button>
+            <a href="/" class="back">戻る</a>
+        </button>
     </body>
 </html>

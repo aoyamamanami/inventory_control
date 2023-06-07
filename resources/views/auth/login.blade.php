@@ -2,6 +2,8 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
+    <a>サンプルmail[m029elle@gamil.com]</a></br>
+    <a>サンプルpassword[sample]</a>
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
@@ -38,9 +40,11 @@
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
-
             <x-primary-button class="ml-3">
                 {{ __('Log in') }}
+            </x-primary-button>
+            <x-primary-button class="ml-3">
+                {{ __('sign up') }}
             </x-primary-button>
         </div>
     </form>
