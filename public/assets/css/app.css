@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+
+
 h3{
     color: #212121;
     padding-left: 20px;
@@ -67,22 +69,22 @@ th,td{
 /*    border-bottom-color: #fff;*/
 /*}*/
 
-.edit_create a .btn--edit{
+a.btn--edit{
     color: #404040;
     font-weight: bold;
-    background-color: blue;
+    background-color: #ddd;
     padding: 15px;
     margin-left: 20px;
     display: block;
     position: absolute;
-    left: 1000px;
-    border-bottom-color: red;
+    right: 180px;
+    /*border-bottom-color: red;*/
 }
 
-.edit_create a .btn--create{
+a.btn--create{
     color: #404040;
     font-weight: bold;
-    background-color: green;
+    background-color: #ddd;
     padding: 15px;
     margin-left: 20px;
     display: block;
@@ -91,3 +93,109 @@ th,td{
 }
 
 
+
+/*以下"create.blade.php"*/
+
+.category_id{
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.category_id select{
+    /*background-color: aqua;*/
+    height: 50px;
+    font-size: 25px;
+    margin: 0.5rem 0;
+}
+
+.name{
+    padding-left: 20px;
+}
+
+.name input{
+    display: inline-block;
+    width: 500px;
+    padding: 0.6rem;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    /*background: blue;*/
+    margin: 0.5rem 0;
+    font-size: 25px;
+}
+
+.unit_price{
+    padding-left: 20px;
+}
+
+.unit_price input{
+    display: inline-block;
+    width: 200px;
+    padding: 0.7rem;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin: 0.5rem 0;
+    font-size: 23px;
+}
+
+.quantity{
+    padding-left: 20px;
+    
+}
+
+.quantity input{
+    display: inline-block;
+    width: 200px;
+    padding: 0.7rem;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin: 0.5rem 0;
+    font-size: 23px;
+}
+
+.product_code{
+    padding-left: 20px;
+}
+
+.product_code input{
+    display: inline-block;
+    width: 200px;
+    padding: 0.7rem;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin: 0.5rem 0;
+    font-size: 23px;
+}
+
+.submit{
+    /*background-color: red;*/
+    display: block;
+    position: relative;
+    border: 1px solid #000;
+    width: 90px;
+    height: 40px;
+    font-size: 25px;
+    margin: 20px 0 10px 80%;
+ }
+
+.back{
+    display: block;
+    position: relative;
+    width: 90px;
+    border: 1px solid #000;
+    background-color: #fff;
+    font-size: 20px;
+    margin: 20px 0 20px 80%;
+    padding: 5px 0;
+    text-align: center;
+}
+
+
+/*以下edit.blade.php*/
+
+.check input {
+    background-color: red;
+    
+}

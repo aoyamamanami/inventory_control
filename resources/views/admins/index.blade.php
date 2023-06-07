@@ -24,23 +24,34 @@
             <table>
                 <div class='products'>
                     <tr>
-                        <th>商品ID</th>
+                        <th>商品コード</th>
                         <th>カテゴリー</th>
                         <th>商品名</th>
-                        <th>在庫数</th>
+                        <th>単価</th>
+                        <th>発注数</th>
                         <th>登録日</th>
-                        <th>ユーザーID</th>
+                        <th>編集</th>]
+                        <th>削除</th></th>
                     </tr>
                     @foreach ($products as $product)
                         <tr>
                             <div class='product'>
-                                <td class="id">{{ $product->id }}</td>
+                                <td class="product_code">{{ $product->product_code }}</td>
                                 <td class="category_id">
                                     <a href="">{{ $product->category->name }}</a></td>
                                 <td class="name">{{ $product->name }}</td>
+                                <td class="unit_price">{{ $product->unit_price }}</td>
                                 <td class="quantity">{{ $product->quantity }}</td>
-                                <td class="created_at">{{ $product->created_at }}</td>
-                                <td class="user_id">{{ $product->user_id }}</td>
+                                <td class="created_at">{{ $product->created_at->format('Y/m/d') }}</td>
+                                <td class="edit_link">
+                                    <a href="/products/{{ $product->id }}">編集</a></td>
+                                <td class="delete_button">
+                                    <form action="/products/{{ $product->id }}" id="form_{{ $product->id }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="button" onclick="deleteProduct({{ $product->id }})">削除</button>
+                                    </form>
+                                </td>
                             </div>
                         </tr>
                     @endforeach
@@ -50,9 +61,18 @@
                 {{ $products->links() }}
             </div>
             <div class='edit_create'>
-                <a href='/products/edit' class="btn--edit">在庫編集</a>
+                <!--<a href='/products/edit' class="btn--edit">在庫編集</a>-->
                 <a href='/products/create' class="btn--create">新規登録</a>
             </div>
         </x-app-layout>
+        <script>
+            function deleteProduct(id){
+            'use strict'
+            
+            if(confirm('削除すると復元できません。\n本当に削除しますか？')){
+                document.getElementById(`form_${id}`).submit();
+                }
+            }
+        </script>
     </body>
 </html>

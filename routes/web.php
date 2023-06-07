@@ -5,17 +5,6 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -30,15 +19,17 @@ Route::controller(AdminController::class)->middleware(['auth'])->group(function(
     Route::post('/products', 'store')->name('store');
     Route::get('/products/create', 'create')->name('create');
     Route::get('/products/edit','edit')->name('edit');
+    Route::get('/products/{product}', 'edit')->name('edit');
+    Route::put('/products/{product}', 'update')->name('update');
+    Route::delete('products/{product}', 'delete')->name('delete');
 });
 
-Route::get('/categories/{category}', [CategoryContorller::class, 'index']);
+Route::get('/categories/{category}', [CategoryController::class, 'index']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.d
-estroy');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 require __DIR__.'/auth.php';
