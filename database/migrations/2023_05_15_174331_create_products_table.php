@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('category_id')->default(0);
+            $table->string('company')->default('');
             $table->string('name')->default('');
             $table->integer('unit_price')->default(0);
             $table->integer('quantity')->default(0);

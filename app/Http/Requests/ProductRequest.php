@@ -18,13 +18,17 @@ class ProductRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
+     
+    
     public function rules()
     {
         return [
-            'product.category_id' => 'required|string|max:2|min:1',
-            'product.name' => 'required|string|unique:products,name|max:50',
-            'product.unit_price' =>'required|string|max:1000000',
-            'product.quantity' => 'required|string|max:1000',
+            'product.category_id' => 'required|max:2|min:1',
+            'product.product_code' => 'required|unique:products,product_code|max:10000000000',
+            'product.company' => 'nullable',
+            'product.name' => 'required|string|max:50',
+            'product.unit_price' =>'required|max:1000000',
+            'product.quantity' => 'required|max:10000000',
         ];
     }
 }

@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+/*input:focus {*/
+/*    outline: none;*/
+/*}*/
+
+.form-list {
+    width: 65%;
+    margin: 60px auto auto auto;
+}
+
+.input-row h2 {
+    width: 80px;
+    font-weight: bold;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+}
+
+.input-row {
+    margin-bottom: 20px;
+}
+
+.category_id select {
+    width: 200px;
+    font-weight: bold;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+    
+}
+
+.product_code input {
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid gray;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+}
+
+.company input {
+    width: 500px;
+    border: none;
+    border-bottom: 1px solid gray;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+}
+
+.name input {
+    width: 500px;
+    border: none;
+    border-bottom: 1px solid gray;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+}
+
+.unit_price input {
+    width: 200px;
+    border: none;
+    border-bottom: 1px solid gray;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+}
+
+.unit_price span {
+    display: inline-block;
+    padding: 8px 10px;
+    font-weight: bold;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+.quantity input {
+    width: 200px;
+    border: none;
+    border-bottom: 1px solid gray;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+}
+
+.submit-btn {
+    text-align: center;
+}
+
+.submit-btn input {
+    display: block;
+	text-align: center;
+	font-family: 'Times New Roman', 'Noto Serif JP', serif;
+	width: 80px;
+    border: 1.2px solid black;
+    font-weight: bold;
+    padding: 8px 10px;
+    margin-top: 60px;
+    box-shadow: 0 2px 2px 0 rgba(152, 149, 149, 0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.back-btn {
+    text-align: center;
+    margin-top: 40px;
+}    
+
+.back-btn a {
+    display: block;
+	text-align: center;
+	font-family: 'Times New Roman', 'Noto Serif JP', serif;
+	width: 200px;
+	margin: auto;
+	padding: 8px 10px;
+	font-weight: bold;
+	border: 1.2px solid #404040;
+	color: #404040;
+	box-shadow: 0 2px 2px 0 rgba(152, 149, 149, 0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+
