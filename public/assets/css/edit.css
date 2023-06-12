@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+.edit-user {
+    color: #212121;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+}
+
+.edit-container {
+    width: 65%;
+    margin: 60px auto auto auto;
+}
+
+.content-category {
+    width: 150px;
+    font-weight: bold;
+    padding: 2px 0px;
+    border-width: 1.5px;
+    border-style: solid;
+    border-color: gray;
+    margin: 20px 0px 30px 0px;
+    background-color: white;
+}
+
+.content-category h1 {
+    padding: 8px 10px;
+    text-align: center;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+}
+
+.content {
+    margin-bottom: 30px;
+}
+
+.content h1 {
+    width: 500px;
+    padding: 15px;
+    background-color: white;
+    font-weight: bold;
+    border-bottom: 1px solid gray;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+}
+
+lavel {
+    width: 20px;
+    padding: 12px;
+    background-color: white;
+    font-weight: bold;
+    border-bottom: 1px solid gray;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+}
+
+.content-unit_price {
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.content-unit_price input {
+    width: 200px;
+    border: none;
+    font-weight: bold;
+    border-bottom: 1px solid gray;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+}
+
+.content-unit_price input::placeholder {
+    color: #e0e0e0;
+}
+
+.content-unit_price span {
+    display: inline-block;
+    padding: 8px 10px;
+    font-weight: bold;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+.content-quantity {
+    margin-bottom: 30px;
+}
+
+.content-quantity input {
+    width: 200px;
+    border: none;
+    font-weight: bold;
+    border-bottom: 1px solid gray;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+}
+
+.content-quantity input::placeholder {
+    color: #e0e0e0;
+}
+
+.submit-btn {
+    text-align: center;
+}
+
+.submit-btn input {
+    display: block;
+	text-align: center;
+	font-family: 'Times New Roman', 'Noto Serif JP', serif;
+	width: 80px;
+    border: 1.2px solid black;
+    font-weight: bold;
+    padding: 8px 10px;
+    margin-top: 60px;
+    box-shadow: 0 2px 2px 0 rgba(152, 149, 149, 0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.back-btn {
+    text-align: center;
+    margin-top: 40px;
+}    
+
+.back-btn a {
+    display: block;
+	text-align: center;
+	font-family: 'Times New Roman', 'Noto Serif JP', serif;
+	width: 200px;
+	margin: auto;
+	padding: 8px 10px;
+	font-weight: bold;
+	border: 1.2px solid #404040;
+	color: #404040;
+	box-shadow: 0 2px 2px 0 rgba(152, 149, 149, 0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}

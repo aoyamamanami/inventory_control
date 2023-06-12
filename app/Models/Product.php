@@ -20,6 +20,7 @@ class Product extends Model
             'unit_price',
             'quantity',
             'product_code',
+            'company',
         ];
         
 

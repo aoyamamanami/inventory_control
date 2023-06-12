@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+h3{
+    color: #212121;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+}
+
+.form-about form input{
+    width: 400px;
+    height: 100%;
+    display: block;
+    padding: 20px 20px 20px 70px;
+    font-size: 20px;
+    background-color: #ddd;
+    position: absolute;
+    right: 70px;
+    box-shadow: 0 2px 2px 0 rgba(152, 149, 149, 0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.form-about form input::placeholder{
+    font-size: 20px;
+    position: relative;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+}
+
+.form-about form{
+    display: block;
+    position: relative;
+    height: 40px;
+}
+
+.form-about form .placeholder_img{
+    display: inline;
+    position: absolute;
+    right: 420px;
+    top: 50%;
+    font-size: 25px;
+    transform: translateY(-50%);
+    background-color: #ddd;
+    width: 30px;
+    height: 30px;
+}
+
+table{
+    border-collapse: collapse;
+    margin: 20px 50px 50px;
+    box-shadow: 0 2px 2px 0 rgba(152, 149, 149, 0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+table th{
+    border-bottom: 2px #212121 solid;
+    padding:10px;
+}
+
+tr:nth-child(odd){
+    background-color: #ddd;
+}
+
+th,td{
+    padding: 5px 10px;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+}
+
+
+a.btn--create{
+    color: #404040;
+    font-weight: 900;
+    background-color: #ddd;
+    padding: 15px;
+    margin-left: 20px;
+    display: block;
+    position: absolute;
+    right: 80px;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+    box-shadow: 0 2px 2px 0 rgba(152, 149, 149, 0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+/*以下edit.blade.php*/
+
+
+.content_product_code{
+    background-color: blue;
+    padding-left: 20px;
+}
+
+.content_product_code input{
+    display: inline-block;
+    width: 200px;
+    padding: 0.7rem;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin: 0.5rem 0;
+    font-size: 23px;
+}
+
+.content_category{
+    padding-left: 20px;
+}
+
+.content_company{
+    padding-left: 20px;
+}
+
+.content_product{
+    padding-left: 20px;
+}
+
+.content_unit_price{
+    padding-left: 20px;
+}
+
+.content_unit_price input{
+    display: inline-block;
+    width: 200px;
+    padding: 0.7rem;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin: 0.5rem 0;
+    font-size: 23px;
+}
+
+.content_quantity{
+    padding-left: 20px;
+}
+
+.content_quantity input{
+    display: inline-block;
+    width: 200px;
+    padding: 0.7rem;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin: 0.5rem 0;
+    font-size: 23px;
+}
+
+.content_created_at{
+    padding-left: 20px;
+}

@@ -47,15 +47,18 @@ class AdminController extends Controller
     
     public function store(Product $product, ProductRequest $request)
     {
-        $validated = $request['product']->validated();
-        $product->fill($validated)->save();
+        // $validated = $request['product']->validated();
+        // $product->fill($validated)->save();
+        // return redirect()->route('index');
+        $input = $request['product'];
+        $product->fill($input)->save();
         return redirect()->route('index');
     }
     
-    public function update(ProductRequest $request, Product $product)
+    public function update(Request $request, Product $product)
     {
-        $validated = $request['product']->validated();
-        $product->fill($validated)->save();
+        $input = $request['product'];
+        $product->fill($input)->save();
         return redirect()->route('index');
     }
     

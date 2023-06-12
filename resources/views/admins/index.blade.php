@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_','-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <title>在庫管理システム</title>
-        <!--Fonts-->
-        <link rel="stylesheet" href="{{asset('/assets/css/app.css')}}">
-        <link href="https://fonts/googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-    </head>
     <body>
         <x-app-layout>
+            <x-slot name="head">
+                <link rel="stylesheet" href="{{asset('/assets/css/index.css')}}">    
+            </x-slot>
             <x-slot name="header">
-            <h2>在庫一覧</h2>
+                <h2>在庫一覧</h2>
             </x-slot>
                     <h3>ユーザー：{{ Auth::user()->name }}</h3>
                     <div class="form-about">
@@ -26,11 +21,12 @@
                     <tr>
                         <th>商品コード</th>
                         <th>カテゴリー</th>
+                        <th>会社名</th>
                         <th>商品名</th>
                         <th>単価</th>
                         <th>発注数</th>
                         <th>登録日</th>
-                        <th>編集</th>]
+                        <th>編集</th>
                         <th>削除</th></th>
                     </tr>
                     @foreach ($products as $product)
@@ -39,6 +35,7 @@
                                 <td class="product_code">{{ $product->product_code }}</td>
                                 <td class="category_id">
                                     <a href="">{{ $product->category->name }}</a></td>
+                                <td class="company">{{ $product->company }}</td>
                                 <td class="name">{{ $product->name }}</td>
                                 <td class="unit_price">{{ $product->unit_price }}</td>
                                 <td class="quantity">{{ $product->quantity }}</td>
@@ -60,10 +57,7 @@
             <div class='paginate'>
                 {{ $products->links() }}
             </div>
-            <div class='edit_create'>
-                <!--<a href='/products/edit' class="btn--edit">在庫編集</a>-->
                 <a href='/products/create' class="btn--create">新規登録</a>
-            </div>
         </x-app-layout>
         <script>
             function deleteProduct(id){

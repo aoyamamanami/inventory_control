@@ -2,8 +2,8 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <a>サンプルmail[m029elle@gamil.com]</a></br>
-    <a>サンプルpassword[sample]</a>
+    <a>サンプルEmail：sample@sample</a></br>
+    <a>サンプルPassword：samplesample</a>
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
