@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ChartController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,6 +23,7 @@ Route::controller(AdminController::class)->middleware(['auth'])->group(function(
     Route::get('/products/{product}', 'edit')->name('edit');
     Route::put('/products/{product}', 'update')->name('update');
     Route::delete('products/{product}', 'delete')->name('delete');
+    Route::get('/charts/chart', 'chart')->name('chart');
 });
 
 Route::get('/categories/{category}', [CategoryController::class, 'index']);
