@@ -10,7 +10,7 @@
             </x-slot>
                 <h3 class="edit-user">ユーザー：{{ Auth::user()->name }}</h3>
                     <div class="edit-container">
-                        <form action="/products/{{ $product->id }}" method="POST">
+                        <form action="/products/{{ $product->id }}" method="POST" id="updateForm">
                             @csrf
                             @method('PUT')
                             <div class="content-category">
@@ -42,6 +42,7 @@
                         <div class="back-btn">
                             <a href="/">一覧に戻る</a>
                         </div>
+                   
         </x-app-layout>
     </body>
 </html>

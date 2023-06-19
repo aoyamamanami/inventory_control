@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use ILLuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
@@ -29,6 +29,12 @@ class Product extends Model
         {
             return $this->belongsTo(Category::class);
         }
+        
+        public function chart()
+        {
+            return $this->hasMany(Chart::class);
+        }
+        
         
         
         
