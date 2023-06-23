@@ -11,15 +11,15 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="nav-link hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('ホーム') }}
                     </x-nav-link>
                     <x-nav-link :href="route('index')" :active="request()->routeIs('dashboard')">
-                        {{__('Index') }}
+                        {{__('一覧') }}
                     </x-nav-link>
                     <x-nav-link :href="route('chart')" :active="request()->routeIs('dashboard')">
-                        {{__('Chart') }}
+                        {{__('グラフ') }}
                     </x-nav-link>
                 </div>
             </div>

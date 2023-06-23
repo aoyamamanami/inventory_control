@@ -15,22 +15,28 @@ use Carbon\Carbon;
 
 class AdminController extends Controller
 {
+
     public function index(Request $request)
     {
+        $categories = Category::all();
         $keyword = $request->input('keyword');
+        $categoryID = $request->input('category');
         $category = Category::where('name', 'LIKE', "%{$keyword}%")->first();
         $query = Product::query();
-        if(!empty($keyword)){
-            $query->where('product_code', 'LIKE', "%{$keyword}%")
-                ->orWhere('name', 'LIKE', "%{$keyword}%");
-                
-            if ($category) {
-                $query->orWhere('category_id', '=', $category->id);
-            }
-        $products = $query->with('category')->orderBy('product_code', 'ASC')->paginate(150);
+        if(!empty($categoryID)) {
+            $query->where('category_id', $categoryID);
+        }
+        if(!empty($keyword)) {
+            $query->where(function ($q) use ($keyword, $category) {
+                $q->where('product_code', 'LIKE', "%{$keyword}%")
+                  ->orWhere('name', 'LIKE', "%{$keyword}%");
+            if($category) {
+                $q->orWhere('category_id', '=', $category->id);
+                }
+            });
         }
         $products = $query->with('category')->orderBy('product_code', 'ASC')->paginate(150);
-        return view('admins/index', compact('products','keyword'));
+        return view('admins.index', compact('products', 'keyword', 'categories'));
     }
     
     
@@ -40,10 +46,12 @@ class AdminController extends Controller
         return view('admins/edit')->with('product', $product);
     }
     
+    
     public function create(Category $category)
     {
         return view('admins/create')->with(['categories' => $category->get()]);
     }
+    
     
     public function store(Product $product, ProductRequest $request)
     {
@@ -51,7 +59,15 @@ class AdminController extends Controller
         // $product->fill($validated)->save();
         // return redirect()->route('index');
         $input = $request['product'];
+        $newQuantity = $input['quantity'];
         $product->fill($input)->save();
+        
+        $chart = new Chart;
+        $chart->product_id = $product->id;
+        $chart->quantity = $newQuantity;
+        $chart->change_date = now();
+        $chart->save();
+        
         return redirect()->route('index');
     }
 
@@ -59,7 +75,6 @@ class AdminController extends Controller
     public function update(Request $request, Product $product)
     {
         $input = $request->input('product');
-        $oldQuantity = $product->quantity;
         $newQuantity = $input['quantity'];
         $product->fill($input)->save();
     
@@ -80,13 +95,6 @@ class AdminController extends Controller
         return redirect('/');
     }
     
-    
-    // public function chart()
-    // {
-    //     $chartData = Chart::orderBy('change_date')->get();
-    //     return view('admins.chart', compact('chartData'));
-    // }
-    
 
     public function chart()
     {
@@ -102,5 +110,7 @@ class AdminController extends Controller
         
         return view('admins.chart', compact('chartData'));
     }
+    
+    
     
 }
