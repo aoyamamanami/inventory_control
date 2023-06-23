@@ -40,9 +40,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 datasets: [{
                     label: chartData[productId].name,
                     data: chartData[productId].data.map(data => data.quantity),
-                    backgroundColor: 'rgba(99, 125,150\, 1)',
+                    backgroundColor: 'rgba(99, 125,150, 1)',
                     borderColor: 'rgba(99, 125,150, 1)',
-                    borderWidth: 1
+                    borderWidth: 1,
                 }]
             },
             options: {

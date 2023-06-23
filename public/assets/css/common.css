@@ -5,5 +5,20 @@
 
 .header-inner {
     font-family: 'Times New Roman', 'Noto Serif JP', serif;
+    font-size: 23px;
+    line-height: 28px;
+    font-weight: bolder;
 }
 
+canvas {
+    width: 70%!important;
+    margin: 0 auto 70px auto;
+}
+
+.nav-link {
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+}
+
+.text {
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;   
+}
