@@ -27,8 +27,8 @@ class ProductRequest extends FormRequest
             'product.product_code' => 'required|unique:products,product_code|max:10000000000',
             'product.company' => 'nullable',
             'product.name' => 'required|string|max:50',
-            'product.unit_price' =>'required|max:1000000',
-            'product.quantity' => 'required|max:10000000',
+            'product.unit_price' =>'required|numeric|max:1000000',
+            'product.quantity' => 'required|numeric|max:10000000',
         ];
     }
 }

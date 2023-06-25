@@ -74,9 +74,22 @@ class AdminController extends Controller
     
     public function update(Request $request, Product $product)
     {
-        $input = $request->input('product');
-        $newQuantity = $input['quantity'];
-        $product->fill($input)->save();
+        $input = $request['product'];
+        $newQuantity = $input['quantity'] ?? $product->quantity;
+        $existingData = Product::find($product->id);
+        
+        if(!is_null($input['unit_price'])) {
+            $product->unit_price = $input['unit_price'];
+        } else {
+            $product->unit_price = $existingData->unit_price;
+        }
+        if(!is_null($input['quantity'])) {
+            $product->quantity = $input['quantity'];
+        } else {
+            $product->quantity = $existingData->quantity;
+        }
+        
+        $product->save();
     
         $chart = new Chart;
         $chart->product_id = $product->id;

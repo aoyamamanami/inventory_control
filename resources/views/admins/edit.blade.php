@@ -26,12 +26,12 @@
                                 <h1>{{ $product->name }}</h1>
                             </div>
                             <div class="content-unit_price">
-                                <lavel>単価</lavel>
+                                <label>単価</label>
                                 <input type="number" name="product[unit_price]" placeholder="{{ $product->unit_price }}"/>
                                 <span>円</span>
                             </div>
                             <div class="content-quantity">
-                                <lavel>数量</lavel>
+                                <label>数量</label>
                                  <input type="number" name="product[quantity]" placeholder="{{ $product->quantity }}"/>
                             </div>
                             <div class="submit-btn">

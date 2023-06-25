@@ -8,18 +8,19 @@
                     <h3>ユーザー：{{ Auth::user()->name }}</h3>
                     <div class="category-nav">
                         <ul class="category-btn">
-                                <li><a href="/">すべて</a></li>
+                                <li><a class="btn" href="/">すべて</a></li>
                             @foreach ($categories as $category)
-                                <li><a href="{{ route('index', ['category' => $category->id]) }}">{{ $category->name }}</a></li>
+                                <li><a class="btn" href="{{ route('index', ['category' => $category->id]) }}">{{ $category->name }}</a></li>
                             @endforeach
+                            <div class="form-about">
+                                <li><form action="{{ route('index') }}" method="GET">
+                                    @csrf
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <input type="text" name="keyword" value="{{ $keyword }}" class="form-inner" placeholder="すべての商品から探す">
+                                    <img class="placeholder_img" src="https://sato-icons.com/wp/wp-content/uploads/2020/09/%E6%A4%9C%E7%B4%A2%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3.png" alt="検索アイコン">
+                                </form></li>
+                            </div>
                         </ul>
-                    </div>
-                    <div class="form-about">
-                        <form action="{{ route('index') }}" method="GET">
-                            @csrf
-                            <input type="text" name="keyword" value="{{ $keyword }}" placeholder="すべての商品から探す">
-                            <img class="placeholder_img" src="https://sato-icons.com/wp/wp-content/uploads/2020/09/%E6%A4%9C%E7%B4%A2%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3.png" alt="検索アイコン">
-                        </form>
                     </div>
             <table>
                 <div class='products'>

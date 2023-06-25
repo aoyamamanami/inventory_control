@@ -42,7 +42,7 @@
     font-family: 'Times New Roman', 'Noto Serif JP', serif;
 }
 
-lavel {
+label {
     width: 20px;
     padding: 12px;
     background-color: white;
@@ -92,6 +92,10 @@ lavel {
 
 .content-quantity input::placeholder {
     color: #e0e0e0;
+}
+
+p {
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
 }
 
 .submit-btn {
