@@ -6,9 +6,9 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChartController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -30,7 +30,7 @@ Route::controller(AdminController::class)->middleware(['auth'])->group(function(
     Route::delete('categories/{category}', 'categoryDelete')->name('categoryDelete');
 });
 
-Route::get('/categories/{category}', [CategoryController::class, 'index']);
+// Route::get('/categories/{category}', [CategoryController::class, 'index']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
