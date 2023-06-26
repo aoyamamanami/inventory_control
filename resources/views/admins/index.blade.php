@@ -5,7 +5,6 @@
             <x-slot name="header">
                 <h2>在庫一覧</h2>
             </x-slot>
-                    <h3>ユーザー：{{ Auth::user()->name }}</h3>
                     <div class="category-nav">
                         <ul class="category-btn">
                                 <li><a class="btn" href="/">すべて</a></li>

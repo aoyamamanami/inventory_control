@@ -1,6 +1,3 @@
-<!DOCTYPE HTML>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <body>
         <x-app-layout>
             <x-slot name="head">
                 <link rel="stylesheet" href="{{ asset('/assets/css/create.css') }}">    
@@ -26,5 +23,3 @@
                 var chartData = @json($chartData);
             </script>
         </x-app-layout>
-    </body>
-</html>

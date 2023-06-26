@@ -11,7 +11,7 @@
 }
 
 canvas {
-    width: 70%!important;
+    width: 60%!important;
     margin: 0 auto 70px auto;
 }
 
@@ -20,5 +20,7 @@ canvas {
 }
 
 .text {
-    font-family: 'Times New Roman', 'Noto Serif JP', serif;   
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
 }
+
+
