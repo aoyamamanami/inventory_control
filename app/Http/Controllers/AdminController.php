@@ -124,6 +124,27 @@ class AdminController extends Controller
         return view('admins.chart', compact('chartData'));
     }
     
+    public function categoryEdit(Category $category)
+    {
+        $categories = Category::all();
+        return view('admins.categoryEdit', compact('categories'));
+    }
     
+    public function categoryCreate(Category $category)
+    {
+        return view('admins.categoryEdit');
+    }
     
+    public function categoryStore(Category $category, Request $request)
+    {
+        $input = $request['category'];
+        $category->fill($input)->save();
+        return redirect()->route('categoryEdit');
+    }
+    
+    public function categoryDelete(Category $category)
+    {
+        $category->delete();
+        return redirect()->route('categoryEdit');
+    }
 }

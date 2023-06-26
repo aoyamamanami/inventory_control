@@ -24,6 +24,10 @@ Route::controller(AdminController::class)->middleware(['auth'])->group(function(
     Route::put('/products/{product}', 'update')->name('update');
     Route::delete('products/{product}', 'delete')->name('delete');
     Route::get('/charts/chart', 'chart')->name('chart');
+    Route::get('/categories/categoryEdit', 'categoryEdit')->name('categoryEdit');
+    Route::post('/categories', 'categoryStore')->name('categoryStore');
+    Route::get('/categories/categoryCreate', 'categoryCreate')->name('categoryCreate');
+    Route::delete('categories/{category}', 'categoryDelete')->name('categoryDelete');
 });
 
 Route::get('/categories/{category}', [CategoryController::class, 'index']);
