@@ -3,7 +3,7 @@
     <body>
         <x-app-layout>
             <x-slot name="head">
-                <link rel="stylesheet" href="{{asset('/assets/css/edit.css')}}">   
+                <link rel="stylesheet" href="{{asset('/css/edit.css')}}">   
             </x-slot>
             <x-slot name="header">
                 <h2>在庫編集画面</h2>

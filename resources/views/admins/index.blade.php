@@ -1,6 +1,6 @@
         <x-app-layout>
             <x-slot name="head">
-                <link rel="stylesheet" href="{{asset('/assets/css/index.css')}}"> 
+                <link rel="stylesheet" href="{{asset('/css/index.css')}}"> 
             </x-slot>
             <x-slot name="header">
                 <h2>在庫一覧</h2>

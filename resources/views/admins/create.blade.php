@@ -3,7 +3,7 @@
     <body>
         <x-app-layout>
             <x-slot name="head">
-                <link rel="stylesheet" href="{{asset('/assets/css/create.css')}}">    
+                <link rel="stylesheet" href="{{asset('/css/create.css')}}">    
             </x-slot>
             <x-slot name="header">
                 新規登録

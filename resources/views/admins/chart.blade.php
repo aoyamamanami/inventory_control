@@ -1,6 +1,6 @@
         <x-app-layout>
             <x-slot name="head">
-                <link rel="stylesheet" href="{{ asset('/assets/css/create.css') }}">    
+                <link rel="stylesheet" href="{{ asset('/css/create.css') }}">    
             </x-slot>
             <x-slot name="header">
                 在庫数グラフ
@@ -15,7 +15,7 @@
                 @endforeach
             </div>
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-            <script src="{{ asset('/assets/js/chart.js') }}"></script>
+            <script src="{{ asset('/js/chart.js') }}"></script>
             <script id="chartData" type="application/json">
                 {!! json_encode($chartData) !!}
             </script>
