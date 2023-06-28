@@ -25,7 +25,7 @@
 //  });
 
 
-
+/*
 document.addEventListener('DOMContentLoaded', function() {
     var chartData = JSON.parse(document.getElementById('chartData').textContent);
     var chartContainer = document.getElementById('chartContainer');
@@ -51,3 +51,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+*/
