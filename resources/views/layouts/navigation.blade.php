@@ -27,6 +27,9 @@
                     <x-nav-link :href="route('chart')" :active="request()->routeIs('dashboard')">
                         {{__('グラフ') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('remarks')" :active="request()->routeIs('dashboard')">
+                        {{__('メモ') }}
+                    </x-nav-link>
                 </div>
             </div>
 

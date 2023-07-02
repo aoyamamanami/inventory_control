@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_','-', app()->getLocale()) }}">
-    <body>
-        <x-app-layout>
-            <x-slot name="head">
-                <link rel="stylesheet" href="{{asset('/css/edit.css')}}">   
-            </x-slot>
+<x-app-layout>
+        <x-slot name="head">
+            <link rel="stylesheet" href="{{asset('/css/edit.css')}}">   
+        </x-slot>
             <x-slot name="header">
                 <h2>在庫編集画面</h2>
             </x-slot>
-                <h3 class="edit-user">ユーザー：{{ Auth::user()->name }}</h3>
                     <div class="edit-container">
                         <form action="/products/{{ $product->id }}" method="POST" id="updateForm">
                             @csrf
@@ -42,7 +38,4 @@
                         <div class="back-btn">
                             <a href="/">一覧に戻る</a>
                         </div>
-                   
-        </x-app-layout>
-    </body>
-</html>
+</x-app-layout>

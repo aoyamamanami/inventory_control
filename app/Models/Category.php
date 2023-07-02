@@ -14,6 +14,13 @@ class Category extends Model
     
     protected $fillable = ['name'];
     
+    protected static function booted()
+    {
+        static::deleting(function($category){
+            $category->products()->delete();
+        });
+    }
+    
     public $timestamps = false;
     
     public function products()

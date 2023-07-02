@@ -1,10 +1,7 @@
-<!DOCTYPE HTML>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <body>
-        <x-app-layout>
-            <x-slot name="head">
-                <link rel="stylesheet" href="{{asset('/css/create.css')}}">    
-            </x-slot>
+    <x-app-layout>
+        <x-slot name="head">
+            <link rel="stylesheet" href="{{asset('/css/create.css')}}">    
+        </x-slot>
             <x-slot name="header">
                 新規登録
             </x-slot>
@@ -50,6 +47,4 @@
         <div class="back-btn">
             <a href="/">一覧に戻る</a>
         </div>
-        </x-app-layout>
-    </body>
-</html>
+    </x-app-layout>

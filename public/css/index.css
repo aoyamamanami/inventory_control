@@ -31,14 +31,12 @@
 
 
 .form-about form input {
-    width: 400px;
+    width: 500px;
     height: 40px;
-    /*display: block;*/
-    padding: 20px 20px 20px 70px;
+    padding: 20px 20px 20px 55px;
     font-size: 20px;
     background-color: #ddd;
-    /*position: absolute;*/
-    /*right: 70px;*/
+    margin-bottom: 30px;
     box-shadow: 0 2px 2px 0 rgba(152, 149, 149, 0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 }
 
@@ -48,26 +46,13 @@
     font-family: 'Times New Roman', 'Noto Serif JP', serif;
 }
 
+.form-about {
+    position: relative;
+}
 
-/*.form-about form {*/
-/*    display: block;*/
-/*    position: relative;*/
-/*    height: 35px;*/
-/*    width: 60%;*/
-/*    right: 70px;*/
-/*    background-color: red;*/
-/*}*/
-
-.form-about form .placeholder_img {
-    /*display: inline;*/
-    /*position: absolute;*/
-    /*right: 420px;*/
-    /*top: 50%;*/
-    font-size: 25px;
-    transform: translateY(-50%);
-    background-color: #ddd;
-    width: 30px;
-    height: 30px;
+.form-about i {
+    position: relative;
+    left: 40px;
 }
 
 table {
