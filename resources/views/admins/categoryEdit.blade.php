@@ -17,7 +17,7 @@
                                 </div>
                         </div>
                     @endforeach
-                    
+                    <!--カテゴリーの新規登録-->
                     <div class="categoryCreate">
                         <div class="form-list">
                             <form action="/categories" method="POST">

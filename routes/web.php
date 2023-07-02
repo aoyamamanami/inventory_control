@@ -28,6 +28,13 @@ Route::controller(AdminController::class)->middleware(['auth'])->group(function(
     Route::post('/categories', 'categoryStore')->name('categoryStore');
     Route::get('/categories/categoryCreate', 'categoryCreate')->name('categoryCreate');
     Route::delete('categories/{category}', 'categoryDelete')->name('categoryDelete');
+    Route::get('/remarks/remark', 'remarks')->name('remarks');
+    Route::post('/remarks', 'remarksStore')->name('remarksStore');
+    Route::get('/remarks/remarksCreate', 'remarksCreate')->name('remarksCreate');
+    Route::get('/remarks/remarksEdit', 'remarksEdit')->name('remarksEdit');
+    Route::get('/remarks/{remark}', 'remarksEdit')->name('remarksEdit');
+    Route::put('/remarks/{remark}', 'remarksUpdate')->name('remarksUpdate');
+    ROute::delete('remarks/{remark}', 'remarksDelete')->name('remarksDelete');
 });
 
 // Route::get('/categories/{category}', [CategoryController::class, 'index']);

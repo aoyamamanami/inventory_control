@@ -1,24 +1,24 @@
-        <x-app-layout>
-            <x-slot name="head">
-                <link rel="stylesheet" href="{{asset('/css/index.css')}}"> 
-            </x-slot>
+<x-app-layout>
+        <x-slot name="head">
+            <link rel="stylesheet" href="{{asset('/css/index.css')}}"> 
+        </x-slot>
             <x-slot name="header">
                 <h2>在庫一覧</h2>
             </x-slot>
                     <div class="category-nav">
+                        <div class="form-about">
+                                <form action="{{ route('index') }}" method="GET">
+                                    @csrf
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <input type="text" name="keyword" value="{{ $keyword }}" class="form-inner" placeholder="すべての商品から探す">
+                                </form>
+                        </div>
                         <ul class="category-btn">
                                 <li><a class="btn" href="/">すべて</a></li>
                             @foreach ($categories as $category)
                                 <li><a class="btn" href="{{ route('index', ['category' => $category->id]) }}">{{ $category->name }}</a></li>
                             @endforeach
-                            <div class="form-about">
-                                <li><form action="{{ route('index') }}" method="GET">
-                                    @csrf
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                    <input type="text" name="keyword" value="{{ $keyword }}" class="form-inner" placeholder="すべての商品から探す">
-                                    <img class="placeholder_img" src="https://sato-icons.com/wp/wp-content/uploads/2020/09/%E6%A4%9C%E7%B4%A2%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3.png" alt="検索アイコン">
-                                </form></li>
-                            </div>
+                            
                         </ul>
                     </div>
             <table>

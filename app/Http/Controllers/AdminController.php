@@ -5,13 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Chart;
+use App\Models\Remarks;
 use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
-
-//use宣言は外部にあるクラスをPostController内にインポートできる。
-//この場合、App\Models内のAdminクラスをインポートしている。
 
 class AdminController extends Controller
 {
@@ -146,5 +144,41 @@ class AdminController extends Controller
     {
         $category->delete();
         return redirect()->route('categoryEdit');
+    }
+    
+    public function remarks(Remarks $remark)
+    {
+        $remarks = Remarks::all();
+        return view('admins.remarks', compact('remarks'));
+    }
+    
+    public function remarksEdit(Remarks $remark)
+    {
+        return view('admins.remarksEdit', compact('remark'));
+    }
+    
+    public function remarksCreate()
+    {
+        return view('admins.remarksCreate');
+    }
+    
+    public function remarksStore(Remarks $remark, Request $request)
+    {
+        $input = $request['remarks'];
+        $remark->fill($input)->save();
+        return redirect()->route('remarks');
+    }
+    
+    public function remarksUpdate(Remarks $remark, Request $request)
+    {
+        $input = $request['remarks'];
+        $remark->fill($input)->save();
+        return redirect()->route('remarks');
+    }
+    
+    public function remarksDelete(Remarks $remark)
+    {
+        $remark->delete();
+        return redirect()->route('remarks');
     }
 }

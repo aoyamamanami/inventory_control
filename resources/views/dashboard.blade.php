@@ -9,14 +9,14 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="text p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
+                    {{ __("Thank you for visiting!") }}
                 </div>
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="text p-6 text-gray-900">
-                    {{ __("これは在庫管理サイトです。") }}
+                    {{ __("こちらは在庫管理アプリです。") }}
                 </div>
                 <div class="text p-6 text-gray-900">
-                    {{ __("こちら廃品回収車です。") }}
+                    {{ __("グラフ機能は、毎回の在庫量をグラフに表示して、将来の在庫を予測するのに役立ちます。") }}
                 </div>
             </div>
         </div>
