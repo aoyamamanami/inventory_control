@@ -27,6 +27,11 @@
     
 }
 
+.error {
+    color: red;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+}
+
 .product_code input {
     width: 300px;
     border: none;
