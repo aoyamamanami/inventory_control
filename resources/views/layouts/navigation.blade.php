@@ -52,6 +52,21 @@
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
+                        <x-dropdown-link :href="route('dashboard')">
+                            {{ __('ホーム') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('create')">
+                            {{ __('新規登録') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('categoryEdit')">
+                            {{ __('カテゴリー') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('chart')">
+                            {{ __('グラフ') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('remarks')">
+                            {{ __('メモ') }}
+                        </x-dropdown-link>
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
