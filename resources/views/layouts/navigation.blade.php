@@ -52,6 +52,21 @@
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
+                        <x-dropdown-link :href="route('dashboard')">
+                            {{ __('ホーム') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('create')">
+                            {{ __('新規登録') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('categoryEdit')">
+                            {{ __('カテゴリー') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('chart')">
+                            {{ __('グラフ') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('remarks')">
+                            {{ __('メモ') }}
+                        </x-dropdown-link>
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
@@ -81,22 +96,37 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+        <div class="responsive-op pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('index')" :active="request()->routeIs('dashboard')">
+                {{ __('在庫一覧') }}
             </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200">
+        <div class="responsive-op pt-4 pb-1 border-t border-gray-200">
             <div class="px-4">
-                <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+                <div class="font-medium text-base text-white">{{ Auth::user()->name }}</div>
+                <div class="font-medium text-sm text-white">{{ Auth::user()->email }}</div>
             </div>
 
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')">
                     {{ __('Profile') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('dashboard')">
+                    {{ __('ホーム') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('create')">
+                    {{ __('新規登録') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('categoryEdit')">
+                    {{ __('カテゴリー') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('chart')">
+                    {{ __('グラフ') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('remarks')">
+                    {{ __('メモ') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->

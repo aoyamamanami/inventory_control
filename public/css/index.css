@@ -28,8 +28,6 @@
    box-shadow: 0 2px 2px 0 rgba(152, 149, 149, 0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2); 
 } 
 
-
-
 .form-about form input {
     width: 500px;
     height: 40px;
@@ -42,7 +40,6 @@
 
 .form-about form input::placeholder {
     font-size: 20px;
-    position: relative;
     font-family: 'Times New Roman', 'Noto Serif JP', serif;
 }
 
@@ -51,8 +48,8 @@
 }
 
 .form-about i {
-    position: relative;
-    left: 40px;
+    position: absolute;
+    margin: 12.5px auto auto 15px;
 }
 
 table {
