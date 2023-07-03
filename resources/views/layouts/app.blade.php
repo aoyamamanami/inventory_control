@@ -10,7 +10,7 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="{{asset('/css/common.css')}}">
+        <link rel="stylesheet" href="{{ asset('/css/common.css')}}">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css">
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -20,6 +20,18 @@
         <div class="min-h-screen bg-gray-100">
             <div class="header-nav">
             @include('layouts.navigation')
+            
+        <!-- Loading -->
+        <div id="loading" class="loader-container">
+            <div class="loader">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
 
             <!-- Page Heading -->
             @if (isset($header))
@@ -36,4 +48,5 @@
             </main>
         </div>
     </body>
+    <script src="{{ asset("js/common.js") }}"></script>
 </html>
