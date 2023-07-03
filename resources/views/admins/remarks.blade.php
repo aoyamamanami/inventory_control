@@ -12,16 +12,20 @@
                     <div class="remarks-list">
                         @foreach($remarks as $remark)
                             <div class="remarks-content">
-                                <h2 class="remarks">{{ $remark->body }}</h2>
-                                <div class="edit_link">
-                                    <a href="/remarks/{{ $remark->id }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <div class="remarks-text">
+                                    <h2 class="remarks">{{ $remark->body }}</h2>
                                 </div>
-                                <div class="delete-btn">
-                                    <form action="/remarks/{{ $remark->id }}" id="form_{{ $remark->id }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="button" onclick="deleteRemark({{ $remark->id }})"><i class="fa-regular fa-trash-can"></i></button>
-                                    </form>
+                                <div class="remarks-bottom">
+                                        <span class="edit_link">
+                                            <a href="/remarks/{{ $remark->id }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        </span>
+                                        <span class="delete_btn">
+                                            <form action="/remarks/{{ $remark->id }}" id="form_{{ $remark->id }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="button" onclick="deleteRemark({{ $remark->id }})"><i class="fa-regular fa-trash-can"></i></button>
+                                            </form>
+                                        </span>
                                 </div>
                             </div>
                         @endforeach
