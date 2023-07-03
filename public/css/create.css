@@ -169,3 +169,16 @@
     font-weight: bold;
 }
 
+
+/*　以下remarksCreate */
+
+.remarks-form-about {
+    margin: 30px auto auto 30px;
+}
+
+.remarks-body textarea {
+    width: 60%;
+    height: 150px;
+    resize: none;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+}

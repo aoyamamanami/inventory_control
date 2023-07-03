@@ -133,3 +133,17 @@ p {
 }
 
 
+
+/* 以下remarksEdit */
+
+.remarks-edit-container {
+    margin: 30px auto auto 30px;
+}
+
+.remarks-body textarea {
+    width: 60%;
+    height: 150px;
+    resize: none;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+}
+
