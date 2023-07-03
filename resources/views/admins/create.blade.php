@@ -18,9 +18,11 @@
                             <div class="input-row product_code">
                                 <h2>商品コード</h2>
                                 <input type="number" name="product[product_code]" value>
-                                    @error('product.product_code')
-                                    <p class="error">同じ商品コードは使用できません。</p>
-                                    @enderror
+                                    <div class="error">
+                                        @error('product.product_code')
+                                        <p class="error">同じ商品コードは使用できません。</p>
+                                        @enderror
+                                    </div>
                             </div>
                             <div class="input-row company">
                                 <h2>会社名</h2>

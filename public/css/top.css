@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #F3F4F6;
+}
+
+h1 {
+    text-align: center;
+    color: #404040;
+    font-weight: bold;
+    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+    transition: font-size 0.3s ease;
+}
+
+h1:hover {
+    font-size: 40px;
+}
+
+.container {
+    margin: auto;
+}
+
+.cube {
+    margin: 100px;
+	width: 100px;
+	height: 100px;
+	position: relative;
+	transform-style: preserve-3d;
+	transform: rotateX(0deg) rotateY(0deg);
+	animation: cube-animation 5s linear infinite;
+}
+
+@keyframes cube-animation {
+    0% { transform: rotateX(0) rotateY(0); }
+    100% { transform: rotateX(-360deg) rotateY(360deg); }
+}
+
+.cube div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+ /*front */
+.cube div:nth-child(1) {
+	background: rgba(128,128,128,.4);
+	transform: translateZ(50px);
+}
+
+  /*back */
+.cube div:nth-child(2) {
+	background: rgba(128,128,128,.8);
+	transform: rotateY(180deg) translateZ(50px);
+}
+
+ /*right */
+.cube div:nth-child(3) {
+	background: rgba(128,128,128,.6);
+	transform: rotateY(90deg) translateZ(50px);
+}
+
+ /*left */
+.cube div:nth-child(4) {
+	background: rgba(128,128,128,.3);
+	transform: rotateY(-90deg) translateZ(50px);
+}
+
+ /*top */
+.cube div:nth-child(5) {
+	background: rgba(128,128,128,.5);
+	transform: rotateX(90deg) translateZ(50px);
+}
+
+ /*bottom */
+.cube div:nth-child(6) {
+	background: rgba(128,128,128,.7);
+	transform: rotateX(-90deg) translateZ(50px);
+}
+
+
+.start {
+    display: flex;
+    margin: auto;
+}
+
+.btn {
+    text-align: center;
+    margin: 20px;
+}
+
+.btn:hover{
+    background-color: #404040;
+}
+
+.btn a {
+    display: block;
+	text-align: center;
+	font-family: 'Times New Roman', 'Noto Serif JP', serif;
+	width: 100px;
+	margin: auto;
+	padding: 8px 10px;
+	font-weight: bold;
+	text-decoration: none;
+	border: 1.2px solid #404040;
+	border-radius: 5px;
+	color: #404040;
+	box-shadow: 0 2px 2px 0 rgba(152, 149, 149, 0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.btn a:hover {
+    color: white;
+}
