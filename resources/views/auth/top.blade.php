@@ -23,7 +23,7 @@
                     <a href="/login">Log In</a>
                 </div>
                 <div class="btn">
-                    <a href="/register">Sign In</a>
+                    <a href="/register">Sign Up</a>
                 </div>
             </div>
             

@@ -13,8 +13,9 @@ use Illuminate\View\View;
 class AuthenticatedSessionController extends Controller
 {
     
-    public function top(){
-        return view('layouts.top');
+    public function top()
+    {
+        return view('auth.top');
     }
     
     /**

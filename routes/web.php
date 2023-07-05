@@ -4,11 +4,12 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChartController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('top', function () {
-    return view('auth.top');
-});
+
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('showLoginForm');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
