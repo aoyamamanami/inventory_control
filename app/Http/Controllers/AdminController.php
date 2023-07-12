@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Chart;
 use App\Models\Remarks;
+use App\Models\User;
 use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -16,7 +17,8 @@ class AdminController extends Controller
 
     public function index(Request $request)
     {
-        $categories = Category::all();
+        $user = auth()->user();
+        $categories = Category::where('user_id', $user->id)->get();
         $keyword = $request->input('keyword');
         $categoryID = $request->input('category');
         $category = Category::where('name', 'LIKE', "%{$keyword}%")->first();
@@ -33,10 +35,13 @@ class AdminController extends Controller
                 }
             });
         }
+        
+        //ログインユーザーが登録した商品のみ表示
+        // $user = auth()->user();
+        $query->where('user_id', $user->id);
         $products = $query->with('category')->orderBy('product_code', 'ASC')->paginate(150);
         return view('admins.index', compact('products', 'keyword', 'categories'));
     }
-    
     
     public function edit(Product $product)
     {
@@ -44,12 +49,10 @@ class AdminController extends Controller
         return view('admins/edit')->with('product', $product);
     }
     
-    
     public function create(Category $category)
     {
         return view('admins/create')->with(['categories' => $category->get()]);
     }
-    
     
     public function store(Product $product, ProductRequest $request)
     {
@@ -58,6 +61,7 @@ class AdminController extends Controller
         // return redirect()->route('index');
         $input = $request['product'];
         $newQuantity = $input['quantity'];
+        $input['user_id'] = auth()->user()->id;
         $product->fill($input)->save();
         
         $chart = new Chart;
@@ -68,7 +72,6 @@ class AdminController extends Controller
         
         return redirect()->route('index');
     }
-
     
     public function update(Request $request, Product $product)
     {
@@ -76,6 +79,7 @@ class AdminController extends Controller
         $newQuantity = $input['quantity'] ?? $product->quantity;
         $existingData = Product::find($product->id);
         
+        //formがnullの場合、既存データで更新
         if(!is_null($input['unit_price'])) {
             $product->unit_price = $input['unit_price'];
         } else {
@@ -88,17 +92,16 @@ class AdminController extends Controller
         }
         
         $product->save();
-    
+        
+        //chartに「更新された単価」を登録
         $chart = new Chart;
         $chart->product_id = $product->id;
         $chart->quantity = $newQuantity;
         $chart->change_date = now();
         $chart->save();
-    
         
         return redirect()->route('index');
     }
-    
     
     public function delete(Product $product)
     {
@@ -106,10 +109,10 @@ class AdminController extends Controller
         return redirect('/');
     }
     
-
     public function chart()
     {
-        $products = Product::all();
+        $user = auth()->user();
+        $products = Product::where('user_id', $user->id)->get();
         
         $chartData = [];
         foreach ($products as $product) {
@@ -122,9 +125,11 @@ class AdminController extends Controller
         return view('admins.chart', compact('chartData'));
     }
     
+    //カテゴリーのCRD
     public function categoryEdit(Category $category)
     {
-        $categories = Category::all();
+        $user = auth()->user();
+        $categories = Category::where('user_id', $user->id)->get();
         return view('admins.categoryEdit', compact('categories'));
     }
     
@@ -136,6 +141,7 @@ class AdminController extends Controller
     public function categoryStore(Category $category, Request $request)
     {
         $input = $request['category'];
+        $input['user_id'] = auth()->user()->id;
         $category->fill($input)->save();
         return redirect()->route('categoryEdit');
     }
@@ -146,9 +152,11 @@ class AdminController extends Controller
         return redirect()->route('categoryEdit');
     }
     
+    //メモのCRUD
     public function remarks(Remarks $remark)
     {
-        $remarks = Remarks::all();
+        $user = auth()->user();
+        $remarks = Remarks::where('user_id', $user->id)->get();
         return view('admins.remarks', compact('remarks'));
     }
     
@@ -165,6 +173,7 @@ class AdminController extends Controller
     public function remarksStore(Remarks $remark, Request $request)
     {
         $input = $request['remarks'];
+        $input['user_id'] = auth()->user()->id;
         $remark->fill($input)->save();
         return redirect()->route('remarks');
     }

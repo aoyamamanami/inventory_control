@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('unit_price')->default(0);
             $table->integer('quantity')->default(0);
             $table->unsignedBigInteger('product_code')->default(0);
+            $table->foreignId('user_id')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

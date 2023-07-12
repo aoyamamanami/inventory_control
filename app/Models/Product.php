@@ -21,6 +21,7 @@ class Product extends Model
             'quantity',
             'product_code',
             'company',
+            'user_id'
         ];
         
 
@@ -33,6 +34,11 @@ class Product extends Model
         public function chart()
         {
             return $this->hasMany(Chart::class);
+        }
+        
+        public function user()
+        {
+            return $this->belongsTo(User::class);
         }
         
         

@@ -12,7 +12,10 @@ class Category extends Model
     use SoftDeletes;
     use HasFactory;
     
-    protected $fillable = ['name'];
+    protected $fillable = [
+        'name',
+        'user_id'
+    ];
     
     protected static function booted()
     {
@@ -23,10 +26,14 @@ class Category extends Model
     
     public $timestamps = false;
     
-    public function products()
+    public function product()
     {
         return $this->hasMany(Product::class);
-        
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
     
     public function getByCategory(int $limit_count = 5)

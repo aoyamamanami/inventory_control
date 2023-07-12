@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('remarks', function (Blueprint $table) {
             $table->id();
             $table->string('body')->default('');
+            $table->foreignId('user_id')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });
