@@ -72,16 +72,15 @@ th,td {
     font-family: 'Times New Roman', 'Noto Serif JP', serif;
 }
 
-
 a.btn-create {
     color: #404040;
     font-weight: 900;
+    text-align: center;
     background-color: #ddd;
     padding: 15px;
-    margin-left: 20px;
+    margin: auto auto auto 50px;
     display: block;
-    position: absolute;
-    right: 80px;
+    width: 100px;
     font-family: 'Times New Roman', 'Noto Serif JP', serif;
     box-shadow: 0 2px 2px 0 rgba(152, 149, 149, 0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
     transition: 0.5s;
@@ -116,6 +115,14 @@ td.delete_button:hover{
 
 /* 以下remarks */
 
+.remarks-container {
+    margin: 30px;
+}
+
+.remarks-list {
+    margin-top: 50px;
+}
+
 .remarks-content {
     width: 60%;
     position: relative;
@@ -138,15 +145,15 @@ td.delete_button:hover{
     font-weight: bold;
 }
 
-.remarks-bottom {
+.remarks-botton {
     position: absolute;
     display: flex;
 }
 
-.remarks-bottom i {
+.remarks-botton span {
     font-size: 20px;
     font-weight: normal;
-    margin-left: 215px;
+    margin-left: 20px;
     color: #808080;
     display: inline-block;
 }
