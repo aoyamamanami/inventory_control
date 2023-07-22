@@ -15,15 +15,15 @@
                                 <div class="remarks-text">
                                     <h2 class="remarks">{{ $remark->body }}</h2>
                                 </div>
-                                <div class="remarks-bottom">
-                                        <span class="edit_link">
-                                            <a href="/remarks/{{ $remark->id }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <div class="remarks-botton">
+                                        <span class="remarks-edit_link">
+                                            <a href="/remarks/{{ $remark->id }}"><i class="fa-solid fa-pen-to-square"></i>編集</a>
                                         </span>
-                                        <span class="delete_btn">
+                                        <span class="remarks-delete_btn">
                                             <form action="/remarks/{{ $remark->id }}" id="form_{{ $remark->id }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="button" onclick="deleteRemark({{ $remark->id }})"><i class="fa-regular fa-trash-can"></i></button>
+                                                <button type="button" onclick="deleteRemark({{ $remark->id }})"><i class="fa-regular fa-trash-can"></i>削除</button>
                                             </form>
                                         </span>
                                 </div>
